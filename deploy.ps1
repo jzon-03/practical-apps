@@ -1,6 +1,17 @@
 # PowerShell deployment script for GitHub Pages
 Write-Host "🚀 Building and deploying to GitHub Pages..." -ForegroundColor Cyan
 
+# Commit any changes first
+Write-Host "📝 Committing changes..." -ForegroundColor Yellow
+git add .
+git commit -m "Update storefront" 2>$null
+if ($LASTEXITCODE -eq 0) {
+    Write-Host "✅ Changes committed!" -ForegroundColor Green
+    git push
+} else {
+    Write-Host "ℹ️ No changes to commit" -ForegroundColor Blue
+}
+
 # Build the Angular application
 Write-Host "📦 Building Angular app..." -ForegroundColor Yellow
 ng build --base-href "/practical-apps/"
@@ -15,6 +26,7 @@ if ($LASTEXITCODE -eq 0) {
     if ($LASTEXITCODE -eq 0) {
         Write-Host "🎉 Deployment successful!" -ForegroundColor Green
         Write-Host "🔗 Your site is live at: https://jzon-03.github.io/practical-apps/" -ForegroundColor Cyan
+        Write-Host "📥 PetNessAPI.zip is available for download!" -ForegroundColor Green
     } else {
         Write-Host "❌ Deployment failed!" -ForegroundColor Red
     }
