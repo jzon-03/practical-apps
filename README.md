@@ -36,7 +36,7 @@ Visit the live storefront: [GitHub Pages URL will be here]
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/practical-apps.git
+git clone https://github.com/jzon-03/practical-apps.git
 cd practical-apps
 ```
 
@@ -138,9 +138,9 @@ Contributions, issues, and feature requests are welcome! Feel free to check the 
 
 ## 👨‍💻 Author
 
-**Your Name**
-- GitHub: [@yourusername](https://github.com/yourusername)
-- LinkedIn: [Your LinkedIn](https://linkedin.com/in/yourprofile)
+**jzon-03**
+- GitHub: [@jzon-03](https://github.com/jzon-03)
+- Portfolio: [Practical Apps](https://jzon-03.github.io/practical-apps/)
 
 ---
 
