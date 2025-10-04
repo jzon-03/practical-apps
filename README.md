@@ -67,10 +67,17 @@ This project includes GitHub Actions workflow for automatic deployment to GitHub
 
 ```bash
 # Build for production
-ng build --configuration production --base-href "/practical-apps/"
+ng build --base-href "/practical-apps/"
 
 # Deploy to GitHub Pages (using angular-cli-ghpages)
-npx angular-cli-ghpages --dir=dist/practical-apps
+npx angular-cli-ghpages --dir=dist/practical-apps/browser
+```
+
+### Quick Deploy Script (Windows)
+
+```powershell
+# Run the PowerShell deployment script
+.\deploy.ps1
 ```
 
 ## 📁 Project Structure
