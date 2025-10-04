@@ -1,59 +1,147 @@
-# PracticalApps
+# Practical Apps - Application Storefront
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.1.1.
+A modern, responsive storefront showcasing full-stack applications built with Angular, .NET Core, and SQLite. This project serves as a portfolio and demonstration of practical software solutions.
 
-## Development server
+## 🚀 Featured Applications
 
-To start a local development server, run:
+### FixMate
+A comprehensive maintenance and repair management system for tracking issues, scheduling repairs, and managing service requests with real-time status updates.
 
+**Technologies:** Angular, TypeScript, .NET Core, SQLite, Entity Framework
+
+### PetNess
+A complete pet care management platform for tracking health records, appointments, vaccinations, and daily care activities for your beloved pets.
+
+**Technologies:** Angular, .NET Core, SQLite, TypeScript, RESTful API
+
+## 🛠️ Technology Stack
+
+- **Frontend:** Angular 20, TypeScript, SCSS
+- **Backend:** .NET Core, Entity Framework
+- **Database:** SQLite
+- **Styling:** Custom CSS with modern design principles
+- **Icons:** Custom SVG icons and Lucide icons
+
+## 🌐 Live Demo
+
+Visit the live storefront: [GitHub Pages URL will be here]
+
+## 📦 Development Setup
+
+### Prerequisites
+- Node.js (v18 or higher)
+- Angular CLI (`npm install -g @angular/cli`)
+
+### Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/yourusername/practical-apps.git
+cd practical-apps
+```
+
+2. Install dependencies:
+```bash
+npm install
+```
+
+3. Start the development server:
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+4. Open your browser and navigate to `http://localhost:4200/`
 
-## Code scaffolding
+## 🚢 Deployment to GitHub Pages
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+### Automatic Deployment (Recommended)
 
-```bash
-ng generate component component-name
-```
+This project includes GitHub Actions workflow for automatic deployment to GitHub Pages.
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+1. Push your code to GitHub
+2. Go to Settings > Pages in your repository
+3. Set Source to "GitHub Actions"
+4. The site will automatically deploy on every push to main branch
 
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
+### Manual Deployment
 
 ```bash
-ng build
+# Build for production
+ng build --configuration production --base-href "/practical-apps/"
+
+# Deploy to GitHub Pages (using angular-cli-ghpages)
+npx angular-cli-ghpages --dir=dist/practical-apps
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+## 📁 Project Structure
 
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
+```
+src/
+├── app/
+│   ├── app.ts              # Main component with app data
+│   ├── app.html            # Storefront template
+│   ├── app.scss            # Component styles
+│   ├── app-module.ts       # App module configuration
+│   └── app-routing-module.ts # Routing configuration
+├── styles.scss             # Global styles
+└── index.html             # Main HTML file
 ```
 
-## Running end-to-end tests
+## 🎨 Features
 
-For end-to-end (e2e) testing, run:
+- **Responsive Design:** Optimized for desktop, tablet, and mobile devices
+- **Modern UI:** Clean, professional design with gradient accents
+- **Interactive Cards:** Hover effects and smooth animations
+- **Technology Tags:** Visual representation of tech stack
+- **Social Links:** Easy access to GitHub and other profiles
+- **SEO Ready:** Proper meta tags and semantic HTML
 
-```bash
-ng e2e
+## 🔧 Customization
+
+### Adding New Apps
+
+1. Update the `apps` signal in `src/app/app.ts`:
+
+```typescript
+{
+  id: '3',
+  name: 'Your App Name',
+  description: 'App description...',
+  technologies: ['Angular', '.NET Core', 'SQLite'],
+  demoUrl: 'https://your-demo-url.com',
+  githubUrl: 'https://github.com/yourusername/your-app',
+  featured: true,
+  iconColor: 'linear-gradient(135deg, #color1 0%, #color2 100%)'
+}
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+### Updating Styles
 
-## Additional Resources
+- Global styles: `src/styles.scss`
+- Component styles: `src/app/app.scss`
+- Color scheme: Update CSS custom properties in the SCSS files
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## 📱 Browser Support
+
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](../../issues).
+
+## 👨‍💻 Author
+
+**Your Name**
+- GitHub: [@yourusername](https://github.com/yourusername)
+- LinkedIn: [Your LinkedIn](https://linkedin.com/in/yourprofile)
+
+---
+
+⭐ Don't forget to give this project a star if you found it helpful!

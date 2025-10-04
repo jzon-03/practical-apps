@@ -1,5 +1,16 @@
 import { Component, signal } from '@angular/core';
 
+interface AppInfo {
+  id: string;
+  name: string;
+  description: string;
+  technologies: string[];
+  demoUrl?: string;
+  githubUrl?: string;
+  featured?: boolean;
+  iconColor: string;
+}
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.html',
@@ -7,5 +18,34 @@ import { Component, signal } from '@angular/core';
   styleUrl: './app.scss'
 })
 export class App {
-  protected readonly title = signal('practical-apps');
+  protected readonly title = signal('Practical Apps');
+  protected readonly currentYear = new Date().getFullYear();
+
+  protected readonly apps = signal<AppInfo[]>([
+    {
+      id: '1',
+      name: 'FixMate',
+      description: 'A comprehensive maintenance and repair management system for tracking issues, scheduling repairs, and managing service requests with real-time status updates.',
+      technologies: ['Angular', 'TypeScript', '.NET Core', 'SQLite', 'Entity Framework'],
+      demoUrl: '#',
+      githubUrl: '#',
+      featured: true,
+      iconColor: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'
+    },
+    {
+      id: '2',
+      name: 'PetNess',
+      description: 'A complete pet care management platform for tracking health records, appointments, vaccinations, and daily care activities for your beloved pets.',
+      technologies: ['Angular', '.NET Core', 'SQLite', 'TypeScript', 'RESTful API'],
+      demoUrl: '#',
+      githubUrl: '#',
+      featured: true,
+      iconColor: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)'
+    }
+  ]);
+
+  protected getTechnologies(): string[] {
+    const allTechs = this.apps().flatMap(app => app.technologies);
+    return [...new Set(allTechs)].sort();
+  }
 }
