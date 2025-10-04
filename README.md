@@ -147,7 +147,8 @@ Contributions, issues, and feature requests are welcome! Feel free to check the 
 
 **jzon-03**
 - GitHub: [@jzon-03](https://github.com/jzon-03)
-- Portfolio: [Practical Apps](https://jzon-03.github.io/practical-apps/)
+- YouTube: [@PracticalApps-z3h](https://www.youtube.com/@PracticalApps-z3h)
+- Portfolio: [Practical Apps](https://thepracticalapps.com)
 
 ---
 

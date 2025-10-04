@@ -22,6 +22,7 @@ interface AppInfo {
 export class App {
   protected readonly title = signal('Practical Apps');
   protected readonly currentYear = new Date().getFullYear();
+  protected readonly youtubeChannel = 'https://www.youtube.com/@PracticalApps-z3h';
 
   protected readonly apps = signal<AppInfo[]>([
     {
