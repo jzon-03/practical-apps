@@ -45,7 +45,7 @@ githubUrl: 'https://github.com/yourusername/your-app-repo',
 
 ### 4. Your Site Will Be Available At:
 ```
-https://yourusername.github.io/practical-apps/
+https://thepracticalapps.com/
 ```
 
 ## Local Development

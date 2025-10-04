@@ -41,7 +41,7 @@ export class App {
       technologies: ['Angular', '.NET Core', 'SQLite', 'TypeScript', 'RESTful API'],
       demoUrl: '', //https://jzon-03.github.io/petness/
       githubUrl: 'https://github.com/jzon-03/petness',
-      downloadUrl: './PetNessAPI.zip',
+      downloadUrl: '/PetNessAPI.zip',
       videoUrl: 'https://www.youtube.com/watch?v=GqWF0Kc0nYo',
       featured: true,
       iconColor: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)'

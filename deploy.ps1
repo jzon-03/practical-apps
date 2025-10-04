@@ -14,18 +14,18 @@ if ($LASTEXITCODE -eq 0) {
 
 # Build the Angular application
 Write-Host "📦 Building Angular app..." -ForegroundColor Yellow
-ng build --base-href "/practical-apps/"
+ng build --base-href "/"
 
 if ($LASTEXITCODE -eq 0) {
     Write-Host "✅ Build successful!" -ForegroundColor Green
     
     # Deploy to GitHub Pages
     Write-Host "🌐 Deploying to GitHub Pages..." -ForegroundColor Yellow
-    npx angular-cli-ghpages --dir=dist/practical-apps/browser
+    npx angular-cli-ghpages --dir=dist/practical-apps/browser --cname=thepracticalapps.com
     
     if ($LASTEXITCODE -eq 0) {
         Write-Host "🎉 Deployment successful!" -ForegroundColor Green
-        Write-Host "🔗 Your site is live at: https://jzon-03.github.io/practical-apps/" -ForegroundColor Cyan
+        Write-Host "🔗 Your site is live at: https://thepracticalapps.com/" -ForegroundColor Cyan
         Write-Host "📥 PetNessAPI.zip is available for download!" -ForegroundColor Green
     } else {
         Write-Host "❌ Deployment failed!" -ForegroundColor Red
