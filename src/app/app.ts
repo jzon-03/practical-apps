@@ -42,7 +42,7 @@ export class App {
       demoUrl: '', //https://jzon-03.github.io/petness/
       githubUrl: 'https://github.com/jzon-03/petness',
       downloadUrl: '/PetNessAPI.zip',
-      videoUrl: 'https://www.youtube.com/watch?v=GqWF0Kc0nYo',
+      videoUrl: 'https://www.youtube.com/watch?v=YzzU6Eg6COc',
       featured: true,
       iconColor: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)'
     }
