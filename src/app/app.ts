@@ -6,6 +6,7 @@ interface AppInfo {
   description: string;
   technologies: string[];
   demoUrl?: string;
+  purchaseUrl?: string;
   githubUrl?: string;
   featured?: boolean;
   iconColor: string;
@@ -41,6 +42,15 @@ export class App {
       githubUrl: 'https://github.com/jzon-03/petness',
       featured: true,
       iconColor: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)'
+    },
+    {
+      id: '3',
+      name: 'Habio',
+      description: 'A comprehensive Home & Family management application designed to help organize household tasks, manage family schedules, and streamline daily family life.',
+      technologies: ['Angular', '.NET Core', 'SQLite', 'TypeScript', 'Entity Framework'],
+      purchaseUrl: 'https://jzon.gumroad.com/l/oaisqq',
+      featured: true,
+      iconColor: 'linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%)'
     }
   ]);
 
