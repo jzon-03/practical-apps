@@ -1,269 +1,557 @@
-<!-- App Storefront Home Page -->
-<div class="storefront">
-  <!-- Hero Section -->
+<div class="site">
+
+  <!-- HERO -->
   <section class="hero">
+    <nav class="navbar">
+      <div class="logo">
+        <span class="logo-mark">&lt;/&gt;</span>
+        <span>Guevarra Studio © {{ currentYear }}</span>
+      </div>
+
+      <div class="nav-links">
+        <a href="#work">Work</a>
+        <a href="#services">Services</a>
+        <a href="#process">Process</a>
+        <a href="#contact" class="nav-cta">Let's Talk</a>
+      </div>
+
+      <button class="menu-btn" (click)="toggleMenu()">
+        ☰
+      </button>
+    </nav>
+
+    <div class="mobile-menu" [class.open]="menuOpen">
+      <a href="#work" (click)="toggleMenu()">Work</a>
+      <a href="#services" (click)="toggleMenu()">Services</a>
+      <a href="#process" (click)="toggleMenu()">Process</a>
+      <a href="#contact" (click)="toggleMenu()">Let's Talk</a>
+    </div>
+
     <div class="hero-content">
-      <div class="hero-logo">
-        <svg
-          width="60"
-          height="60"
-          viewBox="0 0 24 24"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          class="logo-icon"
-        >
-          <path
-            d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          />
-          <polyline
-            points="7.5,4.21 12,6.81 16.5,4.21"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          />
-          <polyline
-            points="7.5,19.79 7.5,14.6 3,12"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          />
-          <polyline
-            points="21,12 16.5,14.6 16.5,19.79"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          />
-          <polyline
-            points="2.5,9.19 12,14.81 21.5,9.19"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          />
-          <line
-            x1="12"
-            y1="22.81"
-            x2="12"
-            y2="14.81"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          />
-        </svg>
+
+      <div class="hero-badge">
+        <span class="status-dot"></span>
+        Web Designer & Developer
       </div>
-      <h1 class="hero-title">{{ title() }}</h1>
-      <p class="hero-subtitle">
-        Full-stack applications built with Angular, .NET Core, and SQLite - solving real-world problems with modern web technologies
+
+      <h1>
+        Websites that make
+        <span>small businesses</span>
+        look big.
+      </h1>
+
+      <p class="hero-text">
+        I design and build modern, fast, mobile-friendly websites
+        for local businesses, musicians, organizations, and entrepreneurs.
       </p>
-      <div class="hero-stats">
-        <div class="stat">
-          <span class="stat-number">{{ apps().length }}</span>
-          <span class="stat-label">Applications</span>
+
+      <div class="hero-buttons">
+        <a href="#work" class="btn btn-primary">
+          See My Work
+          <span>→</span>
+        </a>
+
+        <a href="#contact" class="btn btn-secondary">
+          Start a Project
+        </a>
+      </div>
+
+      <div class="hero-note">
+        <span>★</span>
+        Custom websites. Personal service. No cookie-cutter templates.
+      </div>
+
+    </div>
+
+    <div class="hero-decoration">
+      <div class="code-card">
+        <div class="code-header">
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
-        <div class="stat">
-          <span class="stat-number">{{ getTechnologies().length }}</span>
-          <span class="stat-label">Technologies</span>
+
+        <div class="code-content">
+          <div><span class="purple">const</span> website = <span class="green">"great"</span>;</div>
+          <div><span class="purple">if</span> (business.needsWebsite) </div>
+          <div class="indent">buildSomethingAwesome();</div>
+          <div></div>
         </div>
       </div>
     </div>
+
   </section>
 
-  <!-- Applications Grid -->
-  <section class="apps-section">
-    <div class="container">
-      <h2 class="section-title">Featured Applications</h2>
-      <div class="apps-grid">
-        @for (app of apps(); track app.id) {
-          <div class="app-card" [class.featured]="app.featured">
-            <div class="app-card-header">
-              <div class="app-icon" [style.background]="app.iconColor">
-                @if (app.name === 'FixMate') {
-                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
-                    <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                } @else if (app.name === 'PetNess') {
-                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
-                    <circle cx="11" cy="4" r="2" stroke="currentColor" stroke-width="2"/>
-                    <circle cx="18" cy="8" r="2" stroke="currentColor" stroke-width="2"/>
-                    <circle cx="20" cy="16" r="2" stroke="currentColor" stroke-width="2"/>
-                    <path d="m9 10 5-5 5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="m9 10 3 3 2-2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="m10 12 2-2h3a4 4 0 0 1 0 8h-3l-2-2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                } @else if (app.name === 'Habio') {
-                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
-                    <path d="M3 21h18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M5 21V7l8-4v18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M19 21V11l-6-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M9 9v.01" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M9 12v.01" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M9 15v.01" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M9 18v.01" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                } @else {
-                  <span>{{ app.name.charAt(0).toUpperCase() }}</span>
-                }
-              </div>
-              @if (app.featured) {
-                <span class="featured-badge">Featured</span>
-              }
-            </div>
-            <div class="app-card-content">
-              <h3 class="app-title">{{ app.name }}</h3>
-              <p class="app-description">{{ app.description }}</p>
-              <div class="app-tech">
-                @for (tech of app.technologies; track tech) {
-                  <span class="tech-tag">{{ tech }}</span>
-                }
-              </div>
-            </div>
-            <div class="app-card-footer">
-              <div class="app-links">
-                @if (app.demoUrl) {
-                  <a
-                    [href]="app.demoUrl"
-                    class="btn btn-primary"
-                    target="_blank"
-                    rel="noopener"
-                  >
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                      <path
-                        d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                      <polyline
-                        points="15,3 21,3 21,9"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                      <line
-                        x1="10"
-                        y1="14"
-                        x2="21"
-                        y2="3"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </svg>
-                    Live Demo
-                  </a>
-                }
-                @if (app.purchaseUrl) {
-                  <a
-                    [href]="app.purchaseUrl"
-                    class="btn btn-primary"
-                    target="_blank"
-                    rel="noopener"
-                  >
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                      <path
-                        d="M21 4H3a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                      <path
-                        d="M3 10h18"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </svg>
-                    Purchase
-                  </a>
-                }
-                @if (app.githubUrl) {
-                  <a
-                    [href]="app.githubUrl"
-                    class="btn btn-secondary"
-                    target="_blank"
-                    rel="noopener"
-                  >
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                      <path
-                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </svg>
-                    Source
-                  </a>
-                }
-              </div>
-            </div>
+
+  <!-- WORK -->
+<section class="section work-section" id="work">
+
+  <div class="section-heading">
+    <div>
+      <span class="eyebrow">SELECTED WORK</span>
+      <h2>Websites I've built.</h2>
+    </div>
+
+    <p>
+      Take a quick look at some of my recent website projects.
+      Each preview below is a live version of the actual website.
+    </p>
+  </div>
+
+
+  <div class="website-previews">
+
+    <!-- GREEN OFFICE FARMS -->
+    <article class="website-preview">
+
+      <div class="preview-browser">
+
+        <div class="browser-toolbar">
+
+          <div class="browser-dots">
+            <span></span>
+            <span></span>
+            <span></span>
           </div>
-        }
-      </div>
-    </div>
-  </section>
 
-  <!-- Technologies Section -->
-  <section class="tech-section">
-    <div class="container">
-      <h2 class="section-title">Technologies Used</h2>
-      <div class="tech-grid">
-        @for (tech of getTechnologies(); track tech) {
-          <div class="tech-item">
-            <span>{{ tech }}</span>
+          <div class="browser-address">
+            greenofficefarms.com
           </div>
-        }
-      </div>
-    </div>
-  </section>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-info">
-          <h3>{{ title() }}</h3>
-          <p>Full-stack developer creating practical solutions with Angular, .NET Core, and SQLite</p>
-        </div>
-        <div class="footer-links">
           <a
-            href="https://github.com/jzon-03"
-            class="social-link"
+            href="https://www.greenofficefarms.com/home"
             target="_blank"
             rel="noopener"
-            aria-label="GitHub"
-          >
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-              <path
-                d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
+            class="open-site">
+            ↗
           </a>
+
         </div>
+
+        <div class="iframe-container">
+
+          <iframe
+            src="https://www.greenofficefarms.com/home"
+            title="Green Office Farms website preview"
+            loading="lazy">
+          </iframe>
+
+        </div>
+
       </div>
-      <div class="footer-bottom">
-        <p>&copy; {{ currentYear }} {{ title() }}. Built with Angular.</p>
+
+      <div class="preview-info">
+
+        <div>
+          <span class="project-category">
+            BUSINESS / AGRICULTURE
+          </span>
+
+          <h3>Green Office Farms</h3>
+
+          <p>
+            A modern website concept for a corporate hydroponics
+            farming business.
+          </p>
+        </div>
+
+        <a
+          href="https://www.greenofficefarms.com/home"
+          target="_blank"
+          rel="noopener"
+          class="view-project">
+          View Website →
+        </a>
+
       </div>
+
+    </article>
+
+
+    <!-- DIAL UP -->
+    <article class="website-preview">
+
+      <div class="preview-browser">
+
+        <div class="browser-toolbar">
+
+          <div class="browser-dots">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+
+          <div class="browser-address">
+            dialup.guevarrastudio.com
+          </div>
+
+          <a
+            href="https://dialup.guevarrastudio.com"
+            target="_blank"
+            rel="noopener"
+            class="open-site">
+            ↗
+          </a>
+
+        </div>
+
+        <div class="iframe-container">
+
+          <iframe
+            src="https://dialup.guevarrastudio.com"
+            title="Dial Up band website preview"
+            loading="lazy">
+          </iframe>
+
+        </div>
+
+      </div>
+
+      <div class="preview-info">
+
+        <div>
+          <span class="project-category">
+            MUSIC / ENTERTAINMENT
+          </span>
+
+          <h3>Dial Up</h3>
+
+          <p>
+            A modern website for a Rochester-based 90s cover band,
+            featuring their music, events, and brand.
+          </p>
+        </div>
+
+        <a
+          href="https://dialup.guevarrastudio.com"
+          target="_blank"
+          rel="noopener"
+          class="view-project">
+          View Website →
+        </a>
+
+      </div>
+
+    </article>
+
+
+    <!-- FAIRPORT OKTOBERFEST -->
+    <article class="website-preview">
+
+      <div class="preview-browser">
+
+        <div class="browser-toolbar">
+
+          <div class="browser-dots">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+
+          <div class="browser-address">
+            fairportoktoberfest.guevarrastudio.com
+          </div>
+
+          <a
+            href="https://fairportoktoberfest.guevarrastudio.com"
+            target="_blank"
+            rel="noopener"
+            class="open-site">
+            ↗
+          </a>
+
+        </div>
+
+        <div class="iframe-container">
+
+          <iframe
+            src="https://fairportoktoberfest.guevarrastudio.com"
+            title="Fairport Oktoberfest website preview"
+            loading="lazy">
+          </iframe>
+
+        </div>
+
+      </div>
+
+      <div class="preview-info">
+
+        <div>
+          <span class="project-category">
+            COMMUNITY / EVENT
+          </span>
+
+          <h3>Fairport Oktoberfest</h3>
+
+          <p>
+            An event website designed to promote the festival,
+            activities, vendors, entertainment, and community.
+          </p>
+        </div>
+
+        <a
+          href="https://fairportoktoberfest.guevarrastudio.com"
+          target="_blank"
+          rel="noopener"
+          class="view-project">
+          View Website →
+        </a>
+
+      </div>
+
+    </article>
+
+  </div>
+
+</section>
+
+
+  <!-- SERVICES -->
+  <section class="section services-section" id="services">
+
+    <div class="section-heading centered">
+      <span class="eyebrow">WHAT I DO</span>
+      <h2>More than just a pretty website.</h2>
+      <p>
+        I combine design and software development to create websites
+        that actually work for your business.
+      </p>
     </div>
-  </footer>
+
+    <div class="services">
+
+      <div class="service-card">
+        <div class="service-number">01</div>
+        <div class="service-icon">✦</div>
+        <h3>Website Design</h3>
+        <p>
+          Custom layouts designed specifically for your brand,
+          customers, and goals.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-number">02</div>
+        <div class="service-icon">&lt;/&gt;</div>
+        <h3>Web Development</h3>
+        <p>
+          Fast, responsive websites built with modern technologies
+          and clean code.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-number">03</div>
+        <div class="service-icon">◎</div>
+        <h3>Local Business</h3>
+        <p>
+          Websites designed to help local customers find you,
+          contact you, and choose you.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-number">04</div>
+        <div class="service-icon">↗</div>
+        <h3>Website Improvements</h3>
+        <p>
+          Already have a website? I can modernize the design,
+          improve mobile usability, and fix what's not working.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- DIFFERENT -->
+  <section class="section difference-section">
+
+    <div class="difference-content">
+
+      <div>
+        <span class="eyebrow">WHY ME?</span>
+
+        <h2>
+          You don't need
+          another website
+          template.
+        </h2>
+
+        <p>
+          You need someone who understands your business and can
+          turn that into a website that feels like it belongs to you.
+        </p>
+      </div>
+
+      <div class="difference-list">
+
+        <div class="difference-item">
+          <span>01</span>
+          <div>
+            <h3>Personal attention</h3>
+            <p>
+              You work directly with the person designing and building
+              your website.
+            </p>
+          </div>
+        </div>
+
+        <div class="difference-item">
+          <span>02</span>
+          <div>
+            <h3>Built from scratch</h3>
+            <p>
+              Your website isn't just another template with your logo
+              pasted on top.
+            </p>
+          </div>
+        </div>
+
+        <div class="difference-item">
+          <span>03</span>
+          <div>
+            <h3>Technology that scales</h3>
+            <p>
+              I build with modern development tools so your site can
+              grow with your business.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- PROCESS -->
+  <section class="section process-section" id="process">
+
+    <div class="section-heading centered">
+      <span class="eyebrow">THE PROCESS</span>
+      <h2>From idea to online.</h2>
+    </div>
+
+    <div class="process">
+
+      <div class="process-step">
+        <span>01</span>
+        <h3>Let's Talk</h3>
+        <p>
+          We discuss your business, your customers, and what
+          you want the website to accomplish.
+        </p>
+      </div>
+
+      <div class="process-line"></div>
+
+      <div class="process-step">
+        <span>02</span>
+        <h3>Design</h3>
+        <p>
+          I create the visual direction and structure of the
+          website before development begins.
+        </p>
+      </div>
+
+      <div class="process-line"></div>
+
+      <div class="process-step">
+        <span>03</span>
+        <h3>Build</h3>
+        <p>
+          I turn the design into a responsive, production-ready
+          website.
+        </p>
+      </div>
+
+      <div class="process-line"></div>
+
+      <div class="process-step">
+        <span>04</span>
+        <h3>Launch</h3>
+        <p>
+          Your website goes live and your customers can finally
+          find you online.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CTA -->
+  <section class="cta-section" id="contact">
+
+    <div class="cta-inner">
+
+      <span class="eyebrow">HAVE A PROJECT?</span>
+
+      <h2>
+        Let's build something
+        <span>great.</span>
+      </h2>
+
+      <p>
+        Whether you need a new website or want to improve an existing one,
+        I'd love to hear about it.
+      </p>
+
+      <!-- Embedded Google Form -->
+<div class="form-embed">
+  <iframe
+    src="https://docs.google.com/forms/d/e/1FAIpQLSdjj9jNHUL_HvpuPjq-yYHO5IbG5KXutMbfiHM1oWA6KFPxQw/viewform?embedded=true"
+    title="Contact / Project Form"
+    loading="lazy">
+  </iframe>
 </div>
 
+      <div style="text-align:center;margin-top:0.6rem;">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdjj9jNHUL_HvpuPjq-yYHO5IbG5KXutMbfiHM1oWA6KFPxQw/viewform?usp=dialog" target="_blank" rel="noopener" class="btn btn-light" style="display:inline-flex;align-items:center;gap:0.6rem;">
+          Open Contact Form
+          <span>→</span>
+        </a>
+      </div>
 
-<router-outlet />
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer>
+
+    <div class="footer-main">
+
+      <div class="footer-brand">
+        <div class="logo">
+          <span class="logo-mark">&lt;/&gt;</span>
+          <span>Guevarra Studio</span>
+        </div>
+
+        <p>
+          Websites and software built with purpose.
+        </p>
+      </div>
+
+      <div class="footer-links">
+        <a href="#work">Work</a>
+        <a href="#services">Services</a>
+        <a href="#process">Process</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <span>{{ currentYear }} Guevarra Studio</span>
+      <span>Rochester, NY</span>
+    </div>
+
+  </footer>
+
+</div>

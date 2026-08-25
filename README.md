@@ -24,7 +24,7 @@ A complete pet care management platform for tracking health records, appointment
 
 ## 🌐 Live Demo
 
-Visit the live storefront: [GitHub Pages URL will be here]
+Visit the live storefront: **https://thepracticalapps.com**
 
 ## 📦 Development Setup
 
@@ -67,10 +67,17 @@ This project includes GitHub Actions workflow for automatic deployment to GitHub
 
 ```bash
 # Build for production
-ng build --configuration production --base-href "/practical-apps/"
+ng build --base-href "/"
 
 # Deploy to GitHub Pages (using angular-cli-ghpages)
-npx angular-cli-ghpages --dir=dist/practical-apps
+npx angular-cli-ghpages --dir=dist/practical-apps/browser --cname=thepracticalapps.com
+```
+
+### Quick Deploy Script (Windows)
+
+```powershell
+# Run the PowerShell deployment script
+.\deploy.ps1
 ```
 
 ## 📁 Project Structure
@@ -140,7 +147,8 @@ Contributions, issues, and feature requests are welcome! Feel free to check the 
 
 **jzon-03**
 - GitHub: [@jzon-03](https://github.com/jzon-03)
-- Portfolio: [Practical Apps](https://jzon-03.github.io/practical-apps/)
+- YouTube: [@PracticalApps-z3h](https://www.youtube.com/@PracticalApps-z3h)
+- Portfolio: [Practical Apps](https://thepracticalapps.com)
 
 ---
 
